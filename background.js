@@ -80,7 +80,7 @@ chrome.runtime.onMessage.addListener((msg) => {
 
 chrome.storage.local.get("key", function(data) {
 	
-	if(data.key.length > 0){
+	if(data.key){
 		let urlcss = data.key.map(item=> `https://variations-cdn.figpii.com/css/te_page_ext_css_${item}_*`)
 		let urljs = data.key.map(item=> `https://variations-cdn.figpii.com/js/te_page_ext_js_${item}_*`)
 		const blockList = urljs.concat(urlcss)

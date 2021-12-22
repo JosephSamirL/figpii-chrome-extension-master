@@ -72,9 +72,10 @@ const renderTools = ({ repository, activeTools }) => {
 		}
 		chrome.storage.local.get( function(data) {
            
-			if(data.key.length > 0){
+			if(data.key){
 				data.key.map(keyy=>{
 					let loop = true;
+            if(document.querySelector(`[data-test-id="${keyy}"]`)){
 			[...document.querySelector(`[data-test-id="${keyy}"]`).children].map(item=>{
 				
 				if(item.text==="Original" || item.text==="NewOriginal" && loop){
@@ -85,6 +86,7 @@ const renderTools = ({ repository, activeTools }) => {
 					item.removeAttribute("selected")
 				}
 			})
+		}
 		})
 		}
 			
