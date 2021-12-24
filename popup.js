@@ -106,7 +106,7 @@ const handleVariationChange = (target) => {
 	let variationID = target.value;
 	let completed = target.getAttribute('data-test-complete');
 	let name = target.options[target.selectedIndex].text
-	
+	console.log(completed)
 	completed === "false"? chrome.tabs.query(
 		{
 			active: true,
@@ -124,7 +124,8 @@ const handleVariationChange = (target) => {
 			});
 		}
 	):(function() {
-		if(!(name === "Original" || name ==="NewOriginal")){
+		console.log(name)
+		if(name !== "Original" && name !=="NewOriginal"){
 			chrome.tabs.query(
 				{
 					active: true,
