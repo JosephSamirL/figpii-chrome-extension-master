@@ -102,6 +102,7 @@ const renderTools = ({ repository, activeTools }) => {
 };
 
 const handleVariationChange = (target) => {
+	
 	let testID = target.getAttribute('data-test-id');
 	let variationID = target.value;
 	let completed = target.getAttribute('data-test-complete');

@@ -24,7 +24,7 @@ chrome.runtime.onMessage.addListener((msg) => {
 
 			chrome.storage.local.get( function(data) {
 				
-			  if( data.key){
+			  if( data.key?.includes(msg.testID)){
 				chrome.storage.local.set({variations: msg.variationID, key: data.key}, function() {
 					if(chrome.runtime.lastError) {
 					  console.error(
